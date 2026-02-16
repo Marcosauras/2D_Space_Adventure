@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0640j6g5jq3f"
+path="res://.godot/imported/sfx_explosion.ogg-00829a510aa406945c48f5fa70b3b3ab.oggvorbisstr"
+
+[deps]
+
+source_file="res://Kenney Space Shooter Assets/Bonus/sfx_explosion.ogg"
+dest_files=["res://.godot/imported/sfx_explosion.ogg-00829a510aa406945c48f5fa70b3b3ab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,127 @@
+[gd_scene load_steps=21 format=3 uid="uid://cyub0fa1rmrrg"]
+
+[ext_resource type="Texture2D" uid="uid://dbor1axk4m6b5" path="res://Spacebackground.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cyhi2cc72joxl" path="res://Kenney Space Shooter Assets/PNG/UI/playerLife1_green.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://db510511qytvk" path="res://Player.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d4l1j14spoivm" path="res://laser.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dijk72ku60fj5" path="res://shield.tscn" id="4_dg77c"]
+[ext_resource type="PackedScene" uid="uid://7vqridjbh6hb" path="res://blue_enemy_basic.tscn" id="5_7mycd"]
+[ext_resource type="AudioStream" uid="uid://b48jfdedwymyd" path="res://Kenney Space Shooter Assets/Bonus/sfx_laser1.ogg" id="6_w48qg"]
+[ext_resource type="AudioStream" uid="uid://b6n873pnou7kg" path="res://Kenney Space Shooter Assets/Bonus/sfx_shieldUp.ogg" id="7_2cqfq"]
+[ext_resource type="Script" uid="uid://c6kcxo6aw1bub" path="res://score_label.gd" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://cu4ofy4ii51fa" path="res://enemy_spawner.gd" id="7_272bh"]
+[ext_resource type="Script" uid="uid://b3wx7nln4uuo4" path="res://game_over_label.gd" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bimfv3n32lrrr" path="res://blue_enemy_fast.tscn" id="8_kek77"]
+[ext_resource type="AudioStream" uid="uid://coffhjwevh0wl" path="res://Kenney Space Shooter Assets/Bonus/sfx_shieldDown.ogg" id="8_yaehf"]
+[ext_resource type="Script" uid="uid://crs8c3pwbw1d2" path="res://upgrade_spawner.gd" id="10_efxa6"]
+[ext_resource type="PackedScene" uid="uid://vjuq7d4pa0ud" path="res://upgrade_star.tscn" id="11_dg77c"]
+[ext_resource type="Script" uid="uid://d2ay33il534mh" path="res://stats_label.gd" id="13_ycdy4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_272bh"]
+radius = 10.146478
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_ycdy4"]
+font_size = 36
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 1000)
+autoscroll = Vector2(0, 100)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(280, 177)
+texture = ExtResource("1_ig7tw")
+
+[node name="Player" type="Area2D" parent="." groups=["player", "playerAbilities"]]
+top_level = true
+position = Vector2(266, 851.00006)
+scale = Vector2(2.4, 2.4)
+script = ExtResource("2_h2yge")
+laser_tscn = ExtResource("4_1bvp3")
+shield_tscn = ExtResource("4_dg77c")
+shieldUpgrade = 1
+metadata/_edit_group_ = true
+
+[node name="ShipGraphic" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_272bh")
+
+[node name="LaserSFX" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_w48qg")
+volume_db = -0.5
+pitch_scale = 0.7
+max_distance = 1000.0
+
+[node name="ShieldUpSFX" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("7_2cqfq")
+pitch_scale = 2.0
+
+[node name="ShieldDownSFX" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("8_yaehf")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("7_272bh")
+fast_enemy_tscn = ExtResource("8_kek77")
+basic_enemy_tscn = ExtResource("5_7mycd")
+
+[node name="BasicEnemyTimer" type="Timer" parent="EnemySpawner"]
+autostart = true
+
+[node name="FastEnemyTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="UpgradeSpawner" type="Node2D" parent="."]
+script = ExtResource("10_efxa6")
+upgrade_tscn = ExtResource("11_dg77c")
+
+[node name="Timer" type="Timer" parent="UpgradeSpawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -2.0
+offset_top = 41.0
+offset_right = 539.0
+offset_bottom = 94.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+script = ExtResource("7_5vw27")
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 536.0
+offset_bottom = 959.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_272bh")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_5vw27")
+
+[node name="StatsLabel" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 894.0
+offset_right = 539.0
+offset_bottom = 960.0
+label_settings = SubResource("LabelSettings_ycdy4")
+horizontal_alignment = 1
+script = ExtResource("13_ycdy4")
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="timeout" from="EnemySpawner/BasicEnemyTimer" to="EnemySpawner" method="spawnBasicEnemyShip"]
+[connection signal="timeout" from="EnemySpawner/FastEnemyTimer" to="EnemySpawner" method="spawnFastEnemyShip"]
+[connection signal="timeout" from="UpgradeSpawner/Timer" to="UpgradeSpawner" method="summonUpgrade"]

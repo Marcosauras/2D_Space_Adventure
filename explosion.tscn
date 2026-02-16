@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://crhm0i25m5tt0"]
+
+[ext_resource type="Script" uid="uid://mu5fhkdve0fn" path="res://explosion.gd" id="1_q7epf"]
+[ext_resource type="AudioStream" uid="uid://0640j6g5jq3f" path="res://Kenney Space Shooter Assets/Bonus/sfx_explosion.ogg" id="2_vxas0"]
+
+[sub_resource type="Curve" id="Curve_vxas0"]
+_data = [Vector2(0.00554017, 0.97885036), 0.0, 0.0, 0, 0, Vector2(0.9833796, 0.20336235), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Explosion" type="Node2D"]
+scale = Vector2(2.4, 2.4)
+script = ExtResource("1_q7epf")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 25.0
+initial_velocity_max = 100.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_vxas0")
+
+[node name="Explosion_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vxas0")

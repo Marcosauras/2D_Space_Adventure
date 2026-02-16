@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwnf4o6oovucr"
+path="res://.godot/imported/sfx_zap.ogg-4c9bd0b47197c5398252bcd017258467.oggvorbisstr"
+
+[deps]
+
+source_file="res://Kenney Space Shooter Assets/Bonus/sfx_zap.ogg"
+dest_files=["res://.godot/imported/sfx_zap.ogg-4c9bd0b47197c5398252bcd017258467.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4l1j14spoivm"]
+
+[ext_resource type="Script" uid="uid://d32bnmuakd5ba" path="res://laser.gd" id="1_6vqwg"]
+[ext_resource type="Texture2D" uid="uid://dem05jbtyj740" path="res://Kenney Space Shooter Assets/PNG/Lasers/laserGreen11.png" id="2_g6b45"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vqwg"]
+radius = 5.0
+height = 56.0
+
+[node name="Laser" type="Area2D" groups=["playerAbilities"]]
+script = ExtResource("1_6vqwg")
+speed = 400
+metadata/_edit_group_ = true
+
+[node name="LaserGraphic" type="Sprite2D" parent="."]
+texture = ExtResource("2_g6b45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6vqwg")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." groups=["playerAbilities"]]
+rect = Rect2(-6, -29, 12, 58)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

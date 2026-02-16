@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dijk72ku60fj5"]
+
+[ext_resource type="Script" uid="uid://7k8kt5ht7jaa" path="res://shield.gd" id="1_ffst0"]
+[ext_resource type="Texture2D" uid="uid://mhu206hhdynj" path="res://Kenney Space Shooter Assets/PNG/Effects/shield1.png" id="2_dmnlx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffst0"]
+radius = 30.016663
+
+[node name="Shield" type="Area2D" groups=["playerAbilities"]]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_ffst0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("2_dmnlx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_ffst0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

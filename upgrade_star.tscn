@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://vjuq7d4pa0ud"]
+
+[ext_resource type="Script" uid="uid://bj7dyc3ucdh1m" path="res://upgrade_star.gd" id="1_xrt37"]
+[ext_resource type="Texture2D" uid="uid://hrps0kukj041" path="res://Kenney Space Shooter Assets/PNG/Power-ups/star_gold.png" id="2_xrt37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrt37"]
+radius = 6.5
+
+[node name="UpgradeStar" type="Area2D" groups=["upgrades"]]
+script = ExtResource("1_xrt37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_xrt37")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_xrt37")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

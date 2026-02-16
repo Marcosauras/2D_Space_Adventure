@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://y6rp4yyj6fci"
+path="res://.godot/imported/sfx_twoTone.ogg-37d8c914c1fcd870852002305bbeaee4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Kenney Space Shooter Assets/Bonus/sfx_twoTone.ogg"
+dest_files=["res://.godot/imported/sfx_twoTone.ogg-37d8c914c1fcd870852002305bbeaee4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
