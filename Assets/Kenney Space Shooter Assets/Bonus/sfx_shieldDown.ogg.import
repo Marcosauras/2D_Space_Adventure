@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coffhjwevh0wl"
+path="res://.godot/imported/sfx_shieldDown.ogg-9a402bf8f6e9815a6d0234720222ea8f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Kenney Space Shooter Assets/Bonus/sfx_shieldDown.ogg"
+dest_files=["res://.godot/imported/sfx_shieldDown.ogg-9a402bf8f6e9815a6d0234720222ea8f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
