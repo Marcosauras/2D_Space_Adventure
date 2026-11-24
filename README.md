@@ -66,7 +66,13 @@ Destroying enemies earns points, while collecting upgrades can improve the playe
 
 ## Project Structure
 
-The project uses Godot's scene system to separate different gameplay components.
+The project is organized into three main directories to separate game assets, scenes, and programming logic.
+
+- **Assets/** - Contains the images, fonts, sprites, and sound effects used throughout the game.
+- **scenes/** - Contains the Godot scenes responsible for the main menu, gameplay, enemies, weapons, and upgrades.
+- **scripts/** - Contains the GDScript files responsible for player movement, enemy behavior, weapon systems, upgrades, and game management.
+
+The main project configuration files and README are kept in the root directory for easy access.
 
 ### Important Files
 

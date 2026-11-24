@@ -9,9 +9,14 @@ extends Node2D
 # might add stuff to switch between spawning one or the other and not both at the same time
 
 func spawnBasicEnemyShip():
+	# Get the screen width to determine where enemies can spawn
 	var screenWidth = get_viewport_rect().size.x
 	var randomLocation = randf_range(40, screenWidth - 40)
+	
+	# Randomly determine how many enemies will spawn in a group
 	var groupSize = randf_range(1,4)
+	
+	# Calculate the space needed for the group based on enemy spacing
 	var spawningSpace = (groupSize - 1) * spacing
 	var wallSpacing = screenWidth - 20 - spawningSpace
 	var baseX = randf_range(20, wallSpacing)
@@ -23,9 +28,14 @@ func spawnBasicEnemyShip():
 		newEnemy.position.x = (baseX + i * spacing)
 		
 func spawnFastEnemyShip():	
+	# Get the screen width to determine where enemies can spawn
 	var screenWidth = get_viewport_rect().size.x
 	var randomLocation = randf_range(40, screenWidth - 40)
+	
+	# Randomly determine how many enemies will spawn in a group
 	var groupSize = randf_range(1,4)
+	
+	# Calculate the space needed for the group based on enemy spacing
 	var spawningSpace = (groupSize - 1) * spacing
 	var wallSpacing = screenWidth - 20 - spawningSpace
 	var baseX = randf_range(20, wallSpacing)

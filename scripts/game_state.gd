@@ -11,4 +11,4 @@ var is_game_over = false
 func resetValues():
 	score = 0
 	is_game_over = false
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

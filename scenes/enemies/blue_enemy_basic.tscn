@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://7vqridjbh6hb"]
 
-[ext_resource type="Script" uid="uid://b88vqnn37vcka" path="res://scripts/blue_enemy_basic.gd" id="1_4gyqm"]
-[ext_resource type="PackedScene" uid="uid://crhm0i25m5tt0" path="res://scenes/explosion.tscn" id="2_byfdw"]
+[ext_resource type="Script" uid="uid://b88vqnn37vcka" path="res://scripts/enemies/blue_enemy_basic.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://crhm0i25m5tt0" path="res://scenes/enemies/explosion.tscn" id="2_byfdw"]
 [ext_resource type="Texture2D" uid="uid://di2vmgmrrsgcg" path="res://Assets/Kenney Space Shooter Assets/PNG/Enemies/enemyBlue1.png" id="2_qi2p4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]

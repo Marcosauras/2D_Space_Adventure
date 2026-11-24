@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://crhm0i25m5tt0"]
 
-[ext_resource type="Script" uid="uid://mu5fhkdve0fn" path="res://scripts/explosion.gd" id="1_q7epf"]
+[ext_resource type="Script" uid="uid://mu5fhkdve0fn" path="res://scripts/enemies/explosion.gd" id="1_q7epf"]
 [ext_resource type="AudioStream" uid="uid://0640j6g5jq3f" path="res://Assets/Kenney Space Shooter Assets/Bonus/sfx_explosion.ogg" id="2_vxas0"]
 
 [sub_resource type="Curve" id="Curve_vxas0"]

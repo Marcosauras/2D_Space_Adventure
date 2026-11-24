@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bimfv3n32lrrr"]
 
-[ext_resource type="Script" uid="uid://bnhvv2nqbihp3" path="res://scripts/blue_enemy_fast.gd" id="1_ax10a"]
+[ext_resource type="Script" uid="uid://bnhvv2nqbihp3" path="res://scripts/enemies/blue_enemy_fast.gd" id="1_ax10a"]
 [ext_resource type="Texture2D" uid="uid://dfvj3xyoicvfg" path="res://Assets/Kenney Space Shooter Assets/PNG/Enemies/enemyBlue3.png" id="2_2fmg7"]
-[ext_resource type="PackedScene" uid="uid://crhm0i25m5tt0" path="res://scenes/explosion.tscn" id="2_fff34"]
+[ext_resource type="PackedScene" uid="uid://crhm0i25m5tt0" path="res://scenes/enemies/explosion.tscn" id="2_fff34"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
 radius = 36.0

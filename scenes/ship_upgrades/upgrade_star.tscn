@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://vjuq7d4pa0ud"]
 
-[ext_resource type="Script" uid="uid://bj7dyc3ucdh1m" path="res://scripts/upgrade_star.gd" id="1_xrt37"]
+[ext_resource type="Script" uid="uid://bj7dyc3ucdh1m" path="res://scripts/upgrades/upgrade_star.gd" id="1_xrt37"]
 [ext_resource type="Texture2D" uid="uid://hrps0kukj041" path="res://Assets/Kenney Space Shooter Assets/PNG/Power-ups/star_gold.png" id="2_xrt37"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrt37"]
